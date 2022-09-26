@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/restaurant_info_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/restaurant_info_photo"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/no_photo_go4l"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/restaurant_info_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/white"
+            android:elevation="4dp"
+            android:tint="@color/colorCheckButton"
+            app:layout_constraintBottom_toBottomOf="@+id/restaurant_info_photo"
+            app:layout_constraintEnd_toEndOf="@id/restaurant_info_photo"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_info_photo"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            app:layout_constraintTop_toBottomOf="@+id/restaurant_info_photo">
+
+            <TextView
+                android:id="@+id/restaurant_info_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/Le_Zinc"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/restaurant_info_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/address"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/restaurant_info_name"
+                app:layout_constraintTop_toBottomOf="@id/restaurant_info_name"
+                tools:ignore="TextContrastCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/restaurant_info_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <ImageButton
+                android:id="@+id/restaurant_info_call"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toLeftOf="@id/restaurant_info_like"
+                android:background="@color/fui_transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_call_24"
+                app:tint="@color/orange" />
+
+            <ImageButton
+                android:id="@+id/restaurant_info_like"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/fui_transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_star_rate"
+                app:tint="@color/orange" />
+
+            <ImageButton
+                android:id="@+id/restaurant_info_website"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toRightOf="@id/restaurant_info_like"
+                android:background="@color/fui_transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_round_public_24"
+                app:tint="@color/orange" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/restaurant_info_workmates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/restaurant_info_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_map">
+
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.project.go4lunch.fragments.bottom.MapFragment"
+        android:label="@string/i_m_hungry"
+        tools:layout="@layout/fragment_map">
+        <action
+            android:id="@+id/action_nav_map_to_nav_place"
+            app:destination="@id/nav_place" />
+        <action
+            android:id="@+id/action_nav_map_to_drawer_settings"
+            app:destination="@id/drawer_settings" />
+        <action
+            android:id="@+id/action_nav_map_to_drawer_your_lunch"
+            app:destination="@id/drawer_your_lunch" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_place"
+        android:name="com.project.go4lunch.fragments.bottom.places.PlacesFragment"
+        android:label="@string/i_m_hungry"
+        tools:layout="@layout/fragment_places">
+        <action
+            android:id="@+id/action_nav_place_to_nav_workmates"
+            app:destination="@id/nav_workmates" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_workmates"
+        android:name="com.project.go4lunch.fragments.bottom.workmates.WorkmatesFragment"
+        android:label="@string/workmates"
+        tools:layout="@layout/fragment_workmates" >
+        <action
+            android:id="@+id/action_nav_workmates_to_nav_chat_general"
+            app:destination="@id/nav_chat_general" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_chat_general"
+        android:name="com.project.go4lunch.fragments.bottom.chat.ChatFragment"
+        android:label="@string/chat"
+        tools:layout="@layout/fragment_chat_general" />
+
+    <fragment
+        android:id="@+id/drawer_your_lunch"
+        android:name="com.project.go4lunch.fragments.drawer.yourLunch.YourLunchFragment"
+        android:label="@string/your_lunch"
+        tools:layout="@layout/fragment_your_lunch"/>
+
+    <fragment
+        android:id="@+id/drawer_settings"
+        android:name="com.project.go4lunch.fragments.drawer.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings"/>
+
+</navigation>
